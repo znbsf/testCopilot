@@ -37,20 +37,16 @@ def taskStatus():
     global taskDict
     #打印分割线
     print("-"*50)
-    print("Today is "+str(date.today()))
+    print("|"+" "*10+"Task"+" "*10+"|"+" "*10+"Status"+" "*10+"|")
     print("-"*50)
     for i in taskDict:
         if i != "nowDate":
-            if taskDict[i] == True:
-                print(i+" is done")
-            else:
-                print(i+" is not done")
+            print("|"+" "*10+i+" "*10+"|"+" "*10+str(taskDict[i])+" "*10+"|")
     print("-"*50)
-    print("Daily Task is done? "+str(taskDict["nowDate"] == str(date.today())))
+    print("|"+" "*10+"Today"+" "*10+"|"+" "*10+taskDict["nowDate"]+" "*10+"|")
     print("-"*50)
-    print("Task Status:")  #打印任务状态
-    for i in taskDict:
-        print(i + " is "+str(taskDict[i]))
+    print("|"+" "*10+"Total"+" "*10+"|"+" "*10+str(len(taskDict)-1)+" "*10+"|")
+    print("-"*50)
 
 def dailyInit():
     global taskDict
